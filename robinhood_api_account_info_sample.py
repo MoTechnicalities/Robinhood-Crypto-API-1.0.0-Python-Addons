@@ -4,9 +4,10 @@ def main():
     The sample code below can be inserted into Robinhoods sample trading code. 
     """
 # SET ITERATIONS
-    for i in range(3):
-        print(f"\nIteration {i+1}:")
-        # Check for Buy/Sell Opportunities using retrieved data
+    num_iterations = 2000
+    for i in range(num_iterations):
+        
+# Check for Buy/Sell Opportunities using retrieved data
 
 # Get the Account Information
         api_trading_client = CryptoAPITrading()
@@ -56,7 +57,7 @@ def main():
         print("USD Bid Value of ETH: ", eth_usd_val_bid)
 # Sell Action
     #Set a Buy/Sell threshold
-        threshold = 25.00
+        threshold = 50.00
         sell_amount = (eth_usd_val_bid - buying_power) * 0.5  # Calculate 50% of the difference
         print("Checking Sell Ops")
         if sell_amount > threshold:
@@ -117,12 +118,13 @@ def main():
 
             # Print confirmation message with the amount of ETH bought
             print(f"Bought {eth_to_buy:.6f} ETH for approximately ${buy_amount:.2f}")
-
-# Sleep only if not the last iteration
-        if i < len(range(1)) - 1:  # Check if not the last iteration
-            print(f"Waiting for 5 minutes before next check (Iteration {i+1})...")
+        print(f"Iteration {i+1} compleated.")
+        print("")
+# Sleep for 5 minutes before each iteration (except the last)
+        if i < num_iterations - 1:  # Check if not the last iteration
+            print("Waiting for 5 minutes before next Iteration...")
             time.sleep(5 * 60)  # Sleep for 5 minutes (adjust units if needed)
-
+        print("Loop completed. Ending session.")
 
 
         """
