@@ -4,7 +4,7 @@ def main():
     The sample code below can be inserted into Robinhoods sample trading code. 
     """
 # SET ITERATIONS
-    num_iterations = 2000
+    num_iterations = 4
     for i in range(num_iterations):
         
 # Check for Buy/Sell Opportunities using retrieved data
@@ -57,9 +57,9 @@ def main():
         print("USD Bid Value of ETH: ", eth_usd_val_bid)
 # Sell Action
     #Set a Buy/Sell threshold
-        threshold = 50.00
+        threshold = 25.00
         sell_amount = (eth_usd_val_bid - buying_power) * 0.5  # Calculate 50% of the difference
-        print("Checking Sell Ops")
+        print("Checking Opportunities to Sell...")
         if sell_amount > threshold:
             print(f"I need to Sell: ${sell_amount:.2f}")
             # Assuming you have already retrieved the ETH price (eth_price) and total ETH quantity (total_quantity)
@@ -90,7 +90,7 @@ def main():
             print(f"Sold {eth_to_sell:.6f} ETH for approximately ${sell_amount:.2f}")
 # Buy Action
         buy_amount = (buying_power - eth_usd_val_ask) * 0.5   # Calculate 50% of the difference
-        print("Checking Buy Ops")
+        print("Checking Opportunities to Buy....")
         if buy_amount > threshold:
             print(f"I need to Buy: ${buy_amount:.2f}")
             eth_to_buy = float(buy_amount) / float(eth_price)
@@ -119,13 +119,14 @@ def main():
             # Print confirmation message with the amount of ETH bought
             print(f"Bought {eth_to_buy:.6f} ETH for approximately ${buy_amount:.2f}")
         print(f"Iteration {i+1} compleated.")
-        print("")
+
 # Sleep for 5 minutes before each iteration (except the last)
         if i < num_iterations - 1:  # Check if not the last iteration
             print("Waiting for 5 minutes before next Iteration...")
             time.sleep(5 * 60)  # Sleep for 5 minutes (adjust units if needed)
-        print("Loop completed. Ending session.")
-
+        else:
+            print("Loop completed. Ending session.")
+            print("")
 
         """
         BUILD YOUR TRADING STRATEGY HERE
