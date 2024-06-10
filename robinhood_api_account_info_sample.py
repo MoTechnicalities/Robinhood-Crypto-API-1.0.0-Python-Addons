@@ -13,13 +13,22 @@ def main():
 
 
     """
-    This is 'TRADING STRATEGY' code is designed to be inserted into the
-    Robinhood Crypto Trading API (1.0.0) sample Python code.
+    This 'TRADING STRATEGY' bot code is designed to take advantage of the
+    Robinhood Crypto Trading API (1.0.0) sample Python script.
 
-    This tading strategy maintans a 50/50 value ratio between your Account's
-    [Buying Power] and [ETH-USD Holdings Value]. You can specify how many times the
-    code Loops, the Wait Time in secconds befor the next Loop, and The Buy and Sell
-    Threshold. Adjust the setting to fit your needs.
+    The bot follows a simple tading strategy that relies an market fluctuation.
+    to generate gain. The bot maintans a 50% to 50% balace value ratio
+    between your Robinhood Account's [Buying Power] and [ETH-USD Holdings Value].
+    * As your [ETH-USD Holdings Value] increases the bot will spill over profit into
+      your [Buying Power].
+    * As your [ETH-USD Holdings Value] decreases the bot will use funds from your
+      [Buying Power] to purchase ETH-USD at the lower price.
+    * You can set Buy and Sell Thresholds to prevent the bot from trading before a
+      reasonable Market change in value occurs. 
+    * By adjusting the variables, you can also control how many times the code Loops,
+      the Wait Time in secconds befor the next Loop.
+    
+    Adjust the settings to fit your needs. Happy trading!
     """
 
 
