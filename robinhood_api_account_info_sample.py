@@ -25,7 +25,6 @@ def main():
     num_iterations = 4
     for i in range(num_iterations):
         
-# Check for Buy/Sell Opportunities using retrieved data
 
 # Get the Account Information
         api_trading_client = CryptoAPITrading()
