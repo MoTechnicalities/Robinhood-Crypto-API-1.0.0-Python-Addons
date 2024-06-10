@@ -130,7 +130,7 @@ def main():
             formatted_quantity = f"{eth_to_sell:.6f}"
 
             # !!! THE BELOW STEP DOES THE ACTUAL SELL - REMOVE """ TO FUNCTION !!!
-            
+            """
             order = api_trading_client.place_order(
                 str(uuid.uuid4()),
                 "sell",
@@ -138,7 +138,7 @@ def main():
                 "ETH-USD",
                 {"asset_quantity": formatted_quantity}  # Convert to string for the API
             )
-            
+            """
             # !!! THE ABOVE STEP DOES THE ACTUAL SELL - REMOVE """ TO FUNCTION !!!
 
             print(str(eth_to_sell))
